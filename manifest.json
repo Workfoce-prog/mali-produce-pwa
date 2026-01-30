@@ -1,0 +1,14 @@
+{
+  "name": "Mali Produce",
+  "short_name": "Mali Produce",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00bb55",
+  "description": "Marketplace + coordination tool to reduce produce waste and improve farmer incomes in Mali.",
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
