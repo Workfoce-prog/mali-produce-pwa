@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>Mali Produce</title>
+
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#00bb55" />
+    <link rel="icon" href="./icons/icon-192.png" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <style>
+      html, body { height: 100%; margin: 0; }
+      .bar {
+        height: 44px; display:flex; align-items:center; gap:10px; padding:0 12px;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+        background:#00bb55; color:white;
+      }
+      .bar a { color:white; text-decoration: none; font-weight: 600; }
+      iframe { border:0; width:100%; height: calc(100% - 44px); }
+      .hint { margin-left:auto; font-size:12px; opacity:0.9; }
+    </style>
+  </head>
+
+  <body>
+    <div class="bar">
+      <div><strong>Mali Produce</strong></div>
+      <a href="offline.html" target="_blank" rel="noopener">Help</a>
+      <div class="hint">Install: Chrome ⋮ → “Install app”</div>
+    </div>
+
+    <script>
+      // ✅ CHANGE THIS ONE LINE after you paste your Streamlit URL
+      const STREAMLIT_URL = "PASTE_YOUR_STREAMLIT_URL_HERE";
+
+      // Create iframe dynamically
+      const iframe = document.createElement("iframe");
+      iframe.src = STREAMLIT_URL;
+      iframe.allow = "clipboard-read; clipboard-write";
+      document.body.appendChild(iframe);
+
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./service-worker.js").catch(()=>{});
+      }
+    </script>
+  </body>
+</html>
